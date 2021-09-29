@@ -2,7 +2,7 @@ import './drumPad.css';
 
 function DrumPad() {
   return(
-    <div>
+    <div className="drum-pad">
 
     </div>
   )

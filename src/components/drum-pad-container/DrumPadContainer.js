@@ -2,8 +2,8 @@ import './drumPadContainer.css';
 
 function DrumPadContainer() {
   return(
-    <div>
-
+    <div id="drum-pad-container">
+      <h1>Drum Pad Container</h1>
     </div>
   )
 }
