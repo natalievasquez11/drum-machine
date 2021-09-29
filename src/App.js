@@ -1,10 +1,9 @@
 import './App.css';
+import DrumMachine from './components/drum-machine/DrumMachine';
 
 function App() {
   return (
-    <div className="App">
-      <h1>Is this thing working?</h1>
-    </div>
+    <DrumMachine />
   );
 }
 
