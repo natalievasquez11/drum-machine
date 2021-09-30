@@ -8,6 +8,8 @@
   -webkit-transform: translateX(-50%) translateY(-50%);
   transform: translateX(-50%) translateY(-50%);
   display: flex;
-  width: 50%;
-  height: 40%;
+  width: fit-content;
+  min-height: 40%;
+  height: fit-content;
+  padding: 5px;
 }

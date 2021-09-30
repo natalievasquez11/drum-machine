@@ -1,4 +1,14 @@
 #drum-pad-container {
   border: 1px solid blue;
-  width: 60%;
+  padding: 20px;
+  /* width: 60%; */
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  display: grid;
+  grid-template-columns: 100px 100px 100px;
+  grid-template-rows: auto auto auto; 
+  column-gap: 10px;
+  row-gap: 15px;
+  height: fit-content;
 }

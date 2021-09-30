@@ -1,9 +1,14 @@
 import './drumPad.css';
 
 function DrumPad() {
-  return(
-    <div className="drum-pad">
+  let handleDrumSound = () => {
+    console.log('click works')
+  }
 
+  return(
+    <div className="drum-pad"
+    onClick={handleDrumSound}>
+        <h1>A</h1>
     </div>
   )
 }
