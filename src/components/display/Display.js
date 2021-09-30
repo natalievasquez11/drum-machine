@@ -1,9 +1,11 @@
 import './display.css';
+import './toggle.css';
 
 function Display() {
   return(
     <div id="display">
-      <h1>Display</h1>
+      <p id="power">Power</p>
+      <input className="toggle" type="checkbox" />
     </div>
   )
 }
