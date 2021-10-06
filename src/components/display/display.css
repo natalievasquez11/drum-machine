@@ -7,6 +7,9 @@
   align-content: center;
 }
 
-#power {
-  margin-bottom: 0;
+.display-p {
+  margin-top: 35px;
+  margin-bottom: 5px;
+  font-size: 18px;
 }
+
