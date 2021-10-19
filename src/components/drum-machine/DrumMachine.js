@@ -17,15 +17,15 @@ import SnareDatasette from '../../audio/Snare-Datasette.wav';
 function DrumMachine() {
 
   const audioClips = [
-    { sound: ClapCrackle, label: "Q" }, 
-    { sound: ClapNeat, label: "W" },
-    { sound: HatsMetal, label: "E" },
-    { sound: KickBoiler, label: "A" },
-    { sound: KickCoffeeShop, label: "S" },
-    { sound: PercKungFu, label: "D" },
-    { sound: PercTomtom, label: "Z" },
-    { sound: SnareBlackout, label: "X" },
-    { sound: SnareDatasette, label: "C" }
+    { sound: ClapCrackle, label: "Q", padID: "Q-pad" }, 
+    { sound: ClapNeat, label: "W", padID: "W-pad"  },
+    { sound: HatsMetal, label: "E", padID: "E-pad"  },
+    { sound: KickBoiler, label: "A", padID: "A-pad"  },
+    { sound: KickCoffeeShop, label: "S", padID: "S-pad"  },
+    { sound: PercKungFu, label: "D", padID: "D-pad"  },
+    { sound: PercTomtom, label: "Z", padID: "Z-pad"  },
+    { sound: SnareBlackout, label: "X", padID: "X-pad"  },
+    { sound: SnareDatasette, label: "C", padID: "C-pad"  }
   ]
   return(
     <div id="drum-machine">
