@@ -1,13 +1,35 @@
 import './drumPadContainer.css';
-import DrumPad from '../drum-pad/DrumPad';
+import { useEffect } from 'react';
 
 function DrumPadContainer(props) {
 
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+         document.removeEventListener('keydown', handleKeyDown);
+       };
+   }, [])
+
+   function handleKeyDown(e) {
+    console.log('working');
+    console.log(e.key)
+  }
+
+  let soundPlay = (label) => {
+    const audio = document.getElementById(label);
+    audio.play();
+  }
+
   return(
-    <div id="drum-pad-container" tabIndex="0">
+    <div id="drum-pad-container">
       {
         props.audioClips.map(clip => {
-          return <DrumPad key={clip.label} clip={clip} />
+          return (
+            <div key={clip.label} className="drum-pad"  id={clip.padID} onClick={() => soundPlay(clip.label)}>
+              <audio src={clip.sound} className="clip" id={clip.label} />
+              <p>{clip.label}</p>
+            </div>
+          )
         })
       }
     </div>
