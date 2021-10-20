@@ -11,9 +11,6 @@ import PercTomtom from '../../audio/Perc-Tomtom.wav';
 import SnareBlackout from '../../audio/Snare-Blackout.wav';
 import SnareDatasette from '../../audio/Snare-Datasette.wav';
 
-
-
-
 function DrumMachine() {
 
   const audioClips = [
@@ -27,6 +24,7 @@ function DrumMachine() {
     { sound: SnareBlackout, label: "X", padID: "X-pad"  },
     { sound: SnareDatasette, label: "C", padID: "C-pad"  }
   ]
+
   return(
     <div id="drum-machine">
       <DrumPadContainer audioClips={audioClips}/>
