@@ -1,13 +1,21 @@
 import './drumPad.css';
+import { useEffect } from 'react';
 
 function DrumPad(props) {
+
+  useEffect(() => {
+    document.addEventListener('keydown', handleKeyDown);
+    return () => {
+         document.removeEventListener('keydown', handleKeyDown);
+       };
+   }, [])
 
   let soundPlay = () => {
     const audio = document.getElementById(props.clip.label);
     audio.play();
   }
 
-  let handleKeyDown = (e) => {
+  function handleKeyDown(e) {
     console.log('working');
     console.log(e.key)
   }
