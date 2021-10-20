@@ -11,8 +11,12 @@ function DrumPadContainer(props) {
    }, [])
 
    function handleKeyDown(e) {
-    console.log('working');
-    console.log(e.key)
+    for(let x = 0; x < props.audioClips.length; x++) {
+      if(e.key.toUpperCase() === props.audioClips[x].label) {
+        soundPlay(e.key.toUpperCase())
+      }
+    }
+    return;
   }
 
   let soundPlay = (label) => {
