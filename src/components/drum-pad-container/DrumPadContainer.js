@@ -2,22 +2,22 @@ import './drumPadContainer.css';
 import { useEffect } from 'react';
 
 function DrumPadContainer(props) {
-
   useEffect(() => {
+    function handleKeyDown(e) {
+      for(let x = 0; x < props.audioClips.length; x++) {
+        if(e.key.toUpperCase() === props.audioClips[x].label) {
+          soundPlay(e.key.toUpperCase())
+        }
+      }
+      return;
+    }
+
     document.addEventListener('keydown', handleKeyDown);
+
     return () => {
          document.removeEventListener('keydown', handleKeyDown);
        };
-   }, [])
-
-   function handleKeyDown(e) {
-    for(let x = 0; x < props.audioClips.length; x++) {
-      if(e.key.toUpperCase() === props.audioClips[x].label) {
-        soundPlay(e.key.toUpperCase())
-      }
-    }
-    return;
-  }
+   }, [props.audioClips]);
 
   let soundPlay = (label) => {
     const audio = document.getElementById(label);
