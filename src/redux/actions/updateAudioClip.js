@@ -1,4 +1,4 @@
-import UPDATE_AUDIO from '../constants/action-types';
+import { UPDATE_AUDIO } from '../constants/action-types';
 
 export function updateAudioClip(payload) {
   return {
