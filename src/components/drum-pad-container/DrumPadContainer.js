@@ -1,7 +1,9 @@
 import './drumPadContainer.css';
 import { useEffect } from 'react';
+import { connect } from 'react-redux';
+import { updateAudioClip } from '../../redux/actions/updateAudioClip';
 
-function DrumPadContainer(props) {
+function DrumPadContainer(props, { currentAudioClip, updateAudioClip }) {
   useEffect(() => {
     function handleKeyDown(e) {
       for(let x = 0; x < props.audioClips.length; x++) {
@@ -40,4 +42,10 @@ function DrumPadContainer(props) {
   )
 }
 
-export default DrumPadContainer;
+const mapStateToProps = state => {
+  return { currentAudioClip: state.currentAudioClip }
+}
+
+const mapDispatchToProps = { updateAudioClip };
+
+export default connect(mapStateToProps, mapDispatchToProps)(DrumPadContainer);

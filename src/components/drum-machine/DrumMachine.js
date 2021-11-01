@@ -14,15 +14,15 @@ import SnareDatasette from '../../audio/Snare-Datasette.wav';
 function DrumMachine() {
 
   const audioClips = [
-    { sound: ClapCrackle, label: "Q", padID: "Q-pad" }, 
-    { sound: ClapNeat, label: "W", padID: "W-pad"  },
-    { sound: HatsMetal, label: "E", padID: "E-pad"  },
-    { sound: KickBoiler, label: "A", padID: "A-pad"  },
-    { sound: KickCoffeeShop, label: "S", padID: "S-pad"  },
-    { sound: PercKungFu, label: "D", padID: "D-pad"  },
-    { sound: PercTomtom, label: "Z", padID: "Z-pad"  },
-    { sound: SnareBlackout, label: "X", padID: "X-pad"  },
-    { sound: SnareDatasette, label: "C", padID: "C-pad"  }
+    { sound: ClapCrackle, label: "Q", padID: "Q-pad", name: "Crackle Clap" }, 
+    { sound: ClapNeat, label: "W", padID: "W-pad", name: "Neat Clap"  },
+    { sound: HatsMetal, label: "E", padID: "E-pad", name: "Metal Hats"  },
+    { sound: KickBoiler, label: "A", padID: "A-pad", name: "Boiler Kick"  },
+    { sound: KickCoffeeShop, label: "S", padID: "S-pad", name: "Coffee Shop Kick"  },
+    { sound: PercKungFu, label: "D", padID: "D-pad", name: "Kung Fu Perc"  },
+    { sound: PercTomtom, label: "Z", padID: "Z-pad", name: "Tomtom Perc"  },
+    { sound: SnareBlackout, label: "X", padID: "X-pad", name: "Blackout Snare"  },
+    { sound: SnareDatasette, label: "C", padID: "C-pad", name: "Datasette Snare"  }
   ]
 
   return(
