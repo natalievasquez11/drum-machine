@@ -1,4 +1,6 @@
 import './drumMachine.css';
+import { connect } from 'react-redux';
+import { updateAudioClip } from '../../redux/actions/updateAudioClip';
 import DrumPadContainer from '../drum-pad-container/DrumPadContainer';
 import Display from '../display/Display';
 import ClapCrackle from '../../audio/Clap-Crackle.wav';
@@ -11,7 +13,7 @@ import PercTomtom from '../../audio/Perc-Tomtom.wav';
 import SnareBlackout from '../../audio/Snare-Blackout.wav';
 import SnareDatasette from '../../audio/Snare-Datasette.wav';
 
-function DrumMachine() {
+function DrumMachine({updateAudioClip}) {
 
   const audioClips = [
     { sound: ClapCrackle, label: "Q", padID: "Q-pad", name: "Crackle Clap" }, 
@@ -27,10 +29,12 @@ function DrumMachine() {
 
   return(
     <div id="drum-machine">
-      <DrumPadContainer audioClips={audioClips}/>
+      <DrumPadContainer audioClips={audioClips} updateAudioClip={updateAudioClip}/>
       <Display />
     </div>
   )
 }
 
-export default DrumMachine;
+const mapDispatchToProps = { updateAudioClip };
+
+export default connect(null, mapDispatchToProps)(DrumMachine);

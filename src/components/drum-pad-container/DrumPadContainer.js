@@ -1,14 +1,12 @@
 import './drumPadContainer.css';
 import { useEffect } from 'react';
-import { connect } from 'react-redux';
-import { updateAudioClip } from '../../redux/actions/updateAudioClip';
 
-function DrumPadContainer(props, { currentAudioClip, updateAudioClip }) {
+function DrumPadContainer(props) {
   useEffect(() => {
     function handleKeyDown(e) {
       for(let x = 0; x < props.audioClips.length; x++) {
         if(e.key.toUpperCase() === props.audioClips[x].label) {
-          soundPlay(e.key.toUpperCase())
+          soundPlay(props.audioClips[x]);
         }
       }
       return;
@@ -21,8 +19,9 @@ function DrumPadContainer(props, { currentAudioClip, updateAudioClip }) {
        };
    }, [props.audioClips]);
 
-  let soundPlay = (label) => {
-    const audio = document.getElementById(label);
+  let soundPlay = (clip) => {
+    props.updateAudioClip(clip);
+    const audio = document.getElementById(clip.label);
     audio.play();
   }
 
@@ -31,7 +30,7 @@ function DrumPadContainer(props, { currentAudioClip, updateAudioClip }) {
       {
         props.audioClips.map(clip => {
           return (
-            <div key={clip.label} className="drum-pad"  id={clip.padID} onClick={() => soundPlay(clip.label)}>
+            <div key={clip.label} className="drum-pad"  id={clip.padID} onClick={() => soundPlay(clip)}>
               <audio src={clip.sound} className="clip" id={clip.label} />
               <p>{clip.label}</p>
             </div>
@@ -42,10 +41,4 @@ function DrumPadContainer(props, { currentAudioClip, updateAudioClip }) {
   )
 }
 
-const mapStateToProps = state => {
-  return { currentAudioClip: state.currentAudioClip }
-}
-
-const mapDispatchToProps = { updateAudioClip };
-
-export default connect(mapStateToProps, mapDispatchToProps)(DrumPadContainer);
+export default DrumPadContainer;
