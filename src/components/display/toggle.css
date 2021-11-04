@@ -40,7 +40,7 @@
 }
 
 .toggle:checked {
-  background-color: rgb(117, 228, 209);
+  background-color: rgb(255, 94, 0);
 }
 
 .toggle:checked:before {

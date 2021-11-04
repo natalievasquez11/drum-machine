@@ -1,5 +1,4 @@
 #display {
-  border: 1px solid green;
   width: 250px;
   padding: 20px;
   display: flex;
@@ -13,4 +12,6 @@
   margin-bottom: 5px;
   font-size: 18px;
 }
+
+
 
