@@ -9,16 +9,17 @@ const initialState = {
   }
 };
 
+//TODO: fix rounding issue
 function incVol(volume) {
-  if(volume < 1) {
-    return { num: volume + .1, max: false, min: false };
+  if(volume.num < 1) {
+    return { num: volume.num + 0.1, max: false, min: false };
   }
   return { num: volume.num, max: true, min: false };
 }
 
 function decVol(volume) {
-  if(volume > 0) {
-    return { num: volume - .1, max: false, min: false };
+  if(volume.num > 0) {
+    return { num: volume.num - 0.1, max: false, min: false };
   }
   return { num: volume.num, max: false, min: true };
 }
@@ -34,7 +35,6 @@ function rootReducer(state = initialState, action) {
     default:
       return state;
   }
-
 }
 
 export default rootReducer;

@@ -4,7 +4,8 @@ import { connect } from 'react-redux';
 import { decreaseVolume } from '../../redux/actions/decreaseVolume';
 import { increaseVolume } from '../../redux/actions/increaseVolume';
 
-function Display({ currentAudioClip, increaseVolume, decreaseVolume }) {
+function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume }) {
+  console.log(volume.num)
   return(
     <div id="display">
       <p className="display-p">Power</p>
@@ -23,7 +24,8 @@ function Display({ currentAudioClip, increaseVolume, decreaseVolume }) {
 
 const mapStateToProps = state => {
   return { 
-    currentAudioClip: state.currentAudioClip
+    currentAudioClip: state.currentAudioClip,
+    volume: state.volume
    }
 }
 
