@@ -9,8 +9,12 @@ function Display({ currentAudioClip }) {
       <input className="toggle" type="checkbox" />
 
       <p className="display-p">Volume</p>
-      <input type="range" id='volume-range'/>
-       
+      {/* <input type="range" id='volume-range'/> */}
+      <div className="button-div">
+        <button className="volume-button"><i className="fas fa-plus"></i></button>
+        <button className="volume-button"><i className="fas fa-minus"></i></button>
+      </div>
+
       <p className="display-p">{currentAudioClip.name}</p>
     </div>
   )
