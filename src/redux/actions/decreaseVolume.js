@@ -1,8 +1,7 @@
 import { DECREASE_VOLUME } from '../constants/action-types';
 
-export function decreaseVolume(payload) {
+export function decreaseVolume() {
   return {
-    type: DECREASE_VOLUME,
-    payload
+    type: DECREASE_VOLUME
   }
 }
