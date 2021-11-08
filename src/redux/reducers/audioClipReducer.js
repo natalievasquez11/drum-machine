@@ -2,26 +2,21 @@ import { UPDATE_AUDIO, INCREASE_VOLUME, DECREASE_VOLUME } from '../constants/act
 
 const initialState = {
   currentAudioClip: {}, 
-  volume: {
-    num: .5,
-    max: false,
-    min: false
-  }
+  volume: .5
 };
 
-//TODO: fix rounding issue
 function incVol(volume) {
-  if(volume.num < 1) {
-    return { num: volume.num + 0.1, max: false, min: false };
+  if(volume < 1) {
+    return Math.round(volume * 10)/10 + 0.1;
   }
-  return { num: volume.num, max: true, min: false };
+  return volume;
 }
 
 function decVol(volume) {
-  if(volume.num > 0) {
-    return { num: volume.num - 0.1, max: false, min: false };
+  if(volume > 0) {
+    return Math.round(volume * 10)/10 - 0.1;
   }
-  return { num: volume.num, max: false, min: true };
+  return volume;
 }
 
 function rootReducer(state = initialState, action) {

@@ -15,7 +15,7 @@
 
 .fas {
   font-size: 20px;
-  color: rgb(255, 94, 0);
+  /* color: rgb(255, 94, 0); */
   margin: 7px 0 7px 0;
 }
 
@@ -31,5 +31,11 @@
   background-color: rgb(27, 27, 27);
   border: none;
   border-radius: 3px;
+  color: rgb(255, 94, 0);
+}
+
+.volume-button:disabled {
+  background-color: rgb(40, 40, 40);
+  color: rgb(78, 78, 78);
 }
 
