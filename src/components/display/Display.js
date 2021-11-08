@@ -6,10 +6,11 @@ import { increaseVolume } from '../../redux/actions/increaseVolume';
 
 function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume }) {
   console.log(volume)
-  const disableVolumeButton = () => {
-    if(volume === 1) {
+
+  function disableVolumeButton() {
+    if(volume === 0.9) {
       document.getElementById("inc-vol").disabled = true;
-    } else if(volume === 0) {
+    } else if(volume === 0.1) {
       document.getElementById("dec-vol").disabled = true;
     } else {
       document.getElementById("dec-vol").disabled = false;
