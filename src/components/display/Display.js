@@ -5,8 +5,8 @@ import { decreaseVolume } from '../../redux/actions/decreaseVolume';
 import { increaseVolume } from '../../redux/actions/increaseVolume';
 import { updatePower } from '../../redux/actions/power';
 
-function Display({ currentAudioClip, volume, power, increaseVolume, decreaseVolume, updatePower }) {
-
+function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume, updatePower }) {
+  console.log(volume)
   function disableVolumeButton() {
     if(volume === 0.9) {
       document.getElementById("inc-vol").disabled = true;
@@ -43,8 +43,7 @@ function Display({ currentAudioClip, volume, power, increaseVolume, decreaseVolu
 const mapStateToProps = state => {
   return { 
     currentAudioClip: state.currentAudioClip,
-    volume: state.volume,
-    power: state.power
+    volume: state.volume
    }
 }
 

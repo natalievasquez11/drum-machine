@@ -13,7 +13,7 @@ import PercTomtom from '../../audio/Perc-Tomtom.wav';
 import SnareBlackout from '../../audio/Snare-Blackout.wav';
 import SnareDatasette from '../../audio/Snare-Datasette.wav';
 
-function DrumMachine({volume, updateAudioClip}) {
+function DrumMachine({volume, power, updateAudioClip}) {
 
   const audioClips = [
     { sound: ClapCrackle, label: "Q", padID: "Q-pad", name: "Crackle Clap" }, 
@@ -29,7 +29,7 @@ function DrumMachine({volume, updateAudioClip}) {
 
   return(
     <div id="drum-machine">
-      <DrumPadContainer volume={volume} audioClips={audioClips} updateAudioClip={updateAudioClip}/>
+      <DrumPadContainer volume={volume} power={power} audioClips={audioClips} updateAudioClip={updateAudioClip}/>
       <Display />
     </div>
   )
@@ -37,7 +37,8 @@ function DrumMachine({volume, updateAudioClip}) {
 
 const mapStateToProps = state => {
   return {
-    volume: state.volume
+    volume: state.volume,
+    power: state.power
   }
 }
 

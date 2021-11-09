@@ -20,11 +20,13 @@ function DrumPadContainer(props) {
    }, [props.audioClips]);
 
   let soundPlay = (clip) => {
-    props.updateAudioClip(clip);
-    const audio = document.getElementById(clip.label);
-    audio.volume = props.volume;
-    console.log(props.volume)
-    audio.play();
+    if(props.power) {
+      props.updateAudioClip(clip);
+      const audio = document.getElementById(clip.label);
+      audio.volume = props.volume;
+      console.log(props.volume)
+      audio.play();
+    }
   }
 
   return(
@@ -32,7 +34,7 @@ function DrumPadContainer(props) {
       {
         props.audioClips.map(clip => {
           return (
-            <div key={clip.label} className="drum-pad"  id={clip.padID} onClick={() => soundPlay(clip)}>
+            <div key={clip.label} className={"drum-pad" + (!props.power ? " disable-pads" : "")}  id={clip.padID} onClick={() => soundPlay(clip)}>
               <audio src={clip.sound} className="clip" id={clip.label} />
               <p>{clip.label}</p>
             </div>
