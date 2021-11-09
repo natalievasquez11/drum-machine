@@ -3,9 +3,9 @@ import './toggle.css';
 import { connect } from 'react-redux';
 import { decreaseVolume } from '../../redux/actions/decreaseVolume';
 import { increaseVolume } from '../../redux/actions/increaseVolume';
+import { updatePower } from '../../redux/actions/power';
 
-function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume }) {
-  console.log(volume)
+function Display({ currentAudioClip, volume, power, increaseVolume, decreaseVolume, updatePower }) {
 
   function disableVolumeButton() {
     if(volume === 0.9) {
@@ -21,7 +21,7 @@ function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume }) {
   return(
     <div id="display">
       <p className="display-p">Power</p>
-      <input className="toggle" type="checkbox" />
+      <input className="toggle" type="checkbox" onChange={updatePower}/>
 
       <p className="display-p">Volume</p>
       <div className="button-div">
@@ -43,10 +43,11 @@ function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume }) {
 const mapStateToProps = state => {
   return { 
     currentAudioClip: state.currentAudioClip,
-    volume: state.volume
+    volume: state.volume,
+    power: state.power
    }
 }
 
-const mapDispatchToProps = { increaseVolume, decreaseVolume };
+const mapDispatchToProps = { increaseVolume, decreaseVolume, updatePower };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Display);
