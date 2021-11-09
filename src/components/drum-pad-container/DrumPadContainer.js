@@ -22,8 +22,8 @@ function DrumPadContainer(props) {
   let soundPlay = (clip) => {
     props.updateAudioClip(clip);
     const audio = document.getElementById(clip.label);
-    audio.volume = props.volume.num;
-    console.log(props.volume.num)
+    audio.volume = props.volume;
+    console.log(props.volume)
     audio.play();
   }
 
