@@ -1,8 +1,9 @@
-import { UPDATE_AUDIO, INCREASE_VOLUME, DECREASE_VOLUME } from '../constants/action-types';
+import { UPDATE_AUDIO, INCREASE_VOLUME, DECREASE_VOLUME, UPDATE_POWER } from '../constants/action-types';
 
 const initialState = {
   currentAudioClip: {}, 
-  volume: .5
+  volume: .5,
+  power: true
 };
 
 function incVol(volume) {
@@ -27,6 +28,8 @@ function rootReducer(state = initialState, action) {
       return {...state, volume: incVol(state.volume)}
     case DECREASE_VOLUME:
       return {...state, volume: decVol(state.volume)}
+    case UPDATE_POWER:
+      return {...state, power: !state.power}
     default:
       return state;
   }
