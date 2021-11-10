@@ -13,6 +13,7 @@
   border-radius: 5px;
   width: 100%;
   height: 100%;
+  color: rgb(255, 94, 0);
 }
 
 .drum-pad:hover {
@@ -21,6 +22,11 @@
 
 .drum-pad:active, .activeDrumpad {
   background-color: rgb(12, 12, 12);
+}
+
+.disable-pads, .disable-pads:active, .disable-pads:hover {
+  background-color: rgb(40, 40, 40);
+  color: rgb(78, 78, 78);
 }
 
 
