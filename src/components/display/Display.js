@@ -5,19 +5,7 @@ import { decreaseVolume } from '../../redux/actions/decreaseVolume';
 import { increaseVolume } from '../../redux/actions/increaseVolume';
 import { updatePower } from '../../redux/actions/power';
 
-function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume, updatePower }) {
-  console.log(volume)
-  function disableVolumeButton() {
-    if(volume === 0.9) {
-      document.getElementById("inc-vol").disabled = true;
-    } else if(volume === 0.1) {
-      document.getElementById("dec-vol").disabled = true;
-    } else {
-      document.getElementById("dec-vol").disabled = false;
-      document.getElementById("inc-vol").disabled = false;
-    }
-  }
-
+function Display({ currentAudioClip, volume, power, increaseVolume, decreaseVolume, updatePower }) {
   return(
     <div id="display">
       <p className="display-p">Power</p>
@@ -25,12 +13,10 @@ function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume, upd
 
       <p className="display-p">Volume</p>
       <div className="button-div">
-        <button className="volume-button" id="dec-vol"
-        onClick={() => {decreaseVolume(); disableVolumeButton()}}>
+        <button className="volume-button" onClick={decreaseVolume} disabled={volume === 0 || !power ? true : false}>
           <i className="fas fa-minus"></i>
         </button>
-        <button className="volume-button" id="inc-vol"
-        onClick={() => {increaseVolume(); disableVolumeButton()}}>
+        <button className="volume-button"  onClick={increaseVolume} disabled={volume === 1 || !power ? true : false}>
           <i className="fas fa-plus"></i>
         </button>
       </div>
@@ -43,7 +29,8 @@ function Display({ currentAudioClip, volume, increaseVolume, decreaseVolume, upd
 const mapStateToProps = state => {
   return { 
     currentAudioClip: state.currentAudioClip,
-    volume: state.volume
+    volume: state.volume,
+    power: state.power
    }
 }
 
