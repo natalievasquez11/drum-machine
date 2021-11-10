@@ -11,7 +11,6 @@
   outline: none;
   border: none;
   cursor: pointer;
-  /* background-color: rgb(27, 27, 27); */
   background-color: rgba(255, 94, 0, 0.596);
   transition: background-color ease 0.3s;
   margin: 0 auto;

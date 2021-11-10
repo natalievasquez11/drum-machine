@@ -21,7 +21,7 @@ function Display({ currentAudioClip, volume, power, increaseVolume, decreaseVolu
         </button>
       </div>
 
-      <p className="display-p">{currentAudioClip.name}</p>
+      {!power ? <p></p> : <p className="display-p">{currentAudioClip.name}</p>}
     </div>
   )
 }
